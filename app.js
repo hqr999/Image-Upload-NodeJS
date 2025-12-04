@@ -20,7 +20,6 @@ const prod_roteador = require('./routes/productRoutes')
 // error handler
 const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
-const fileUpload = require('express-fileupload');
 
 
 app.use(express.static('./public'))
