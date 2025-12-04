@@ -2,7 +2,7 @@ const {StatusCodes} = require('http-status-codes')
 const path = require('path')
 
 const uploadImagemProduto = async(req,res) => {
-    const produtoImagem = req.files.imagem 
+    const produtoImagem = req.files.imagem
     const camImagem = path.join(__dirname,'../public/uploads/'+`${produtoImagem.name}`)
 
     await produtoImagem.mv(camImagem)

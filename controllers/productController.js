@@ -9,7 +9,8 @@ const criaProduto = async(req,res) => {
 
 
 const pegaTdsProdutos = async(req,res) => {
-    res.send('Lista completa de produtos')
+    const produtos = await Produto.find({})
+    res.status(StatusCodes.OK).json(produtos)
 }
 
 module.exports = {
