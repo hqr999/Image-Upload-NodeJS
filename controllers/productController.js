@@ -10,7 +10,7 @@ const criaProduto = async(req,res) => {
 
 const pegaTdsProdutos = async(req,res) => {
     const produtos = await Produto.find({})
-    res.status(StatusCodes.OK).json(produtos)
+    res.status(StatusCodes.OK).json({produtos})
 }
 
 module.exports = {

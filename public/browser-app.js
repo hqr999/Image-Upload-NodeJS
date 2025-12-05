@@ -1,4 +1,4 @@
-const url = '/api/v1/products'
+const url = '/api/v1/produtos'
 const fileFormDOM = document.querySelector('.file-form')
 
 const nameInputDOM = document.querySelector('#name')
@@ -43,7 +43,7 @@ const nameValue = nameInputDOM.value;
 const priceValue = priceInputDOM.value;
 try {
  
- const product = {name:nameValue,price:priceValue,image:imageValue}
+ const product = {nome:nameValue,preco:priceValue,imagem:imageValue}
  
   await axios.post(url,product);
   fetchProducts()
@@ -56,14 +56,14 @@ try {
 
 async function fetchProducts () {
  try {
-  const {data:{products}} = await axios.get(url);
+  const {data:{produtos}} = await axios.get(url);
   
-  const productsDOM = products.map((product)=>{
+  const productsDOM = produtos.map((product)=>{
 return `<article class="product">
-<img src="${product.image}" alt="${product.name}" class="img"/>
+<img src="${product.imagem}" alt="${product.nome}" class="img"/>
 <footer>
-<p>${product.name}</p>
-<span>$${product.price}</span>
+<p>${product.nome}</p>
+<span>$${product.preco}</span>
 </footer>
 </article>`
   }).join('')
